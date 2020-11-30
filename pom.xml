@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--modelVersion 描述这个POM文件是遵从哪个版本的项目描述符-->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--GAV  工程三坐标  g一般为项目的目录结构，a一般为项目名称，v表示版本号，packaging表示打包方式-->
+    <groupId>org.xp</groupId>
+    <artifactId>Spring-Security-All</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--子模块列表-->
+    <modules>
+        <module>Security-Simple</module>
+    </modules>
+
+    <!--Spring Boot 顶级依赖，提供相关Maven坐标的默认依赖-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+    </parent>
+
+
+    <!--统一版本管理-->
+    <properties>
+        <springboot.version>2.1.2.RELEASE</springboot.version>
+        <mysql.version>8.0.20</mysql.version>
+        <lombok.version>1.18.10</lombok.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--通过注解生成基础代码的插件-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>
