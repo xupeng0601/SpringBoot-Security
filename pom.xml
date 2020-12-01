@@ -29,9 +29,10 @@
         <springboot.version>2.1.2.RELEASE</springboot.version>
         <mysql.version>8.0.20</mysql.version>
         <lombok.version>1.18.10</lombok.version>
+        <mybatis-plus.version>3.4.1</mybatis-plus.version>
     </properties>
 
-
+    <!--dependencyManagement管理的坐标，子模块引入的时候就不需要写版本号了-->
     <dependencyManagement>
         <dependencies>
             <!--通过注解生成基础代码的插件-->
@@ -39,6 +40,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
